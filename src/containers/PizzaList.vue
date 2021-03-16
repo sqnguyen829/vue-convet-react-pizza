@@ -8,14 +8,20 @@
             <th scope="col">Edit</th>
           </tr>
         </thead>
-        <tbody>
-          {{'render Pizza here'}}
+        <tbody v-bind:key="pizza.id" v-for="pizza in pizzas">
+          <Pizza v-bind:pizza="pizza" v-on:edit-pizza="$emit('edit-pizza', pizza)"/>
         </tbody>
       </table>
 </template>
 
 <script>
+import Pizza from '../components/Pizza'
+
 export default {
-    name:"PizzaList"
+    name:"PizzaList",
+    props:["pizzas"],
+    components:{
+        Pizza
+    }
 }
 </script>
