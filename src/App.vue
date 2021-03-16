@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <Header/>
+    <PizzaForm/>
+    <PizzaList/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header'
+import PizzaForm from './components/PizzaForm'
+import PizzaList from './containers/PizzaList'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header,
+    PizzaForm,
+    PizzaList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.form-row{
+  padding-bottom: 2.5rem;
+  width: 75%;
+  margin: 0 auto;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
 }
 </style>
