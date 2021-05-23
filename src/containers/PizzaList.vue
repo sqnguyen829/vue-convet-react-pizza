@@ -9,13 +9,27 @@
           </tr>
         </thead>
         <tbody>
-          {{'render Pizza here'}}
+          <Pizza 
+            v-for="pizza in pizzas"
+            v-bind:pizza ="pizza"
+            v-bind:key="pizza.id"/>
         </tbody>
       </table>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import Pizza from '../components/Pizza'
+
 export default {
-    name:"PizzaList"
+    name:"PizzaList",
+    components:{
+      Pizza
+    },
+    computed: {
+      ...mapState([
+        'pizzas'
+      ])
+    }
 }
 </script>

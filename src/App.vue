@@ -10,6 +10,7 @@
 import Header from './components/Header'
 import PizzaForm from './components/PizzaForm'
 import PizzaList from './containers/PizzaList'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'App',
@@ -17,6 +18,14 @@ export default {
     Header,
     PizzaForm,
     PizzaList
+  },
+  methods:{
+    ...mapActions([
+      'handleFetchPizzas'
+    ])
+  },
+  created(){
+    this.handleFetchPizzas()
   }
 }
 </script>
