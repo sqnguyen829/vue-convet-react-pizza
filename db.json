@@ -2,8 +2,8 @@
   "pizzas": [
     {
       "id": 1,
-      "topping": "Plain",
-      "size": "Small",
+      "topping": "Plain pizza",
+      "size": "Medium",
       "vegetarian": true
     },
     {
